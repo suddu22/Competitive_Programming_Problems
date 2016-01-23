@@ -1,0 +1,83 @@
+## This is the text editor interface.
+## Anything you type or change here will be seen by the other person in real time.
+
+given $x is longitude and $y is latitude and the following characters
+
+> east  $x++
+< west  $x--
+^ north $y++
+v south $y--
+
+and the sample input as a string
+^v<>><^>v<>^<^>^>><v>v>><^^<>><<<><<><v^^v<<><^<^v<v^><^^v<<>><<<<^>v^<v>><v^><v<vvv>v^v^<v><<>>v<><<v>^<>><>>^><>v^v>v<<>v<>v^^><<>>>v<<>>>>^>v>>
+
+0,0 <  ^
+1,0    v
+0,0 <
+write a sub that identifies all closed loops
+
+def get_closed_loops(text):
+    if not text:
+        return [0, 0]
+
+    res = []
+    final_result = []
+    table = {
+        ">": +1,
+        "<": -1,
+        "^": +1,
+        "": -1
+        }
+    start = [0, 0]
+
+    for ch in text:
+        if ch in table:
+            current_char = table[ch]
+            if ch == '>' or ch == '<':
+                start[0] += current_char
+            else:
+                start[1] += current_char
+        res.append(ch)
+
+
+        if start == [0 , 0]:
+            final_result.append(res)
+            res = []
+
+    return final_result
+
+
+[
+	“^v”,
+	“<>”,
+	“><“,
+	“^>v<“,
+	...
+]
+
+
+
+def longitude_latutude(text):
+    if not text:
+        retrun (0,0)
+
+    table = {
+        ">": +1,
+        "<": -1,
+        "^": +1,
+        "": -1
+        }
+
+    longitude = 0
+    latitude = 0
+
+    for ch in text:
+        if ch in table:
+            current_char = table[ch]
+
+            if ch == '>' or ch == '<': # increament the longitude
+                longitude += current_char
+            else:
+                latitude += current_char
+
+    return (longitude, latitude)

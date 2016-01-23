@@ -1,0 +1,64 @@
+// Find running median from a stream of integers
+// input stream
+// 2 3 6 1
+
+sort the current input so far
+// 2 3 6 1 5
+// 2 3 => 2.5
+// 2 3 6 1
+//stream length ?
+
+stream: a list of integers
+
+def class test:
+    datastructure ds
+    def inputAnotherIntegerFromStream(int x):
+
+
+    def findCurrentMedian():
+    // return the median of this stream exactly
+
+      if len(stream) > 1:
+        heap_list = []
+        for num in stream:
+            heapq.heappush(heap_list, num)
+
+        popcount = len(stream) / 2
+
+        for i in range(popcount):
+            heapq.heappop(heap_list)
+
+
+        return heapq.heappop(heap_list)
+
+
+      else:
+        return num
+
+test.inputAnotherIntegerFromStream(2)
+test.findCurrentMedian 2
+test.inputAnotherIntegerFromStream(3)
+test.inputAnotherIntegerFromStream(6)
+test.inputAnotherIntegerFromStream(1)
+test.findCurrentMedian 2.5
+
+
+http://stackoverflow.com/questions/10657503/find-running-median-from-a-stream-of-integers
+https://en.wikipedia.org/wiki/External_sorting
+
+
+3 5 6 2 8 4
+arr1: 3 5 6 -> 3 5 6
+arr2: 2 8 4 -> 2 4 8
+
+arr1: 3 5 -> 3
+arr2: 6 2 -> 2 6
+arr3: 8 4 -> 4 8
+
+(3,1) (2,2) (4,3)
+
+1G 10G
+
+2 , 3
+
+

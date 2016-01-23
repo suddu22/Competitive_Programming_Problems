@@ -1,0 +1,33 @@
+def pramp():
+   print "Practice Makes Perfect"
+
+pramp()
+
+def islandCount(matrix):
+
+   r = len(matrix)
+   c = len(matrix[0])
+
+   visit = [[False for k in range(c)] for i in range(r)]
+
+
+   rpointer = 0
+   cpointer = 0
+
+   while rpointer < r and cpointer < c:
+      current = matrix[rpointer][rpointer]
+      visit[rpointer][cpointer] = True
+      if current == 1:
+           #function to visit island
+           markIsland(matrix,i,j)
+
+#recursive function
+def markIsland(matrix, i, j):
+
+   # check if visited or 0
+
+https://fr.wikipedia.org/wiki/Algorithme_de_remplissage_par_diffusion
+https://en.wikipedia.org/wiki/Flood_fill
+
+
+
